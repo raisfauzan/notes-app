@@ -1,0 +1,43 @@
+/* Media Query */
+@media screen and (max-width: 1200px) {
+  .container {
+    margin-left: 3rem;
+  }
+
+  .container note-list note-item,
+  .container note-list-archived note-item-archived {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .add-note {
+    right: 27px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    margin-left: 3rem;
+  }
+  .container note-list note-item,
+  .container note-list-archived note-item-archived {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .add-note {
+    right: 22px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin-left: 2rem;
+  }
+  .container note-list note-item,
+  .container note-list-archived note-item-archived {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .add-note {
+    right: 15px;
+  }
+}

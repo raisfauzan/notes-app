@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoteApp</title>
+  </head>
+  <body>
+    <app-bar></app-bar>
+    <div class="popup-box">
+      <div class="popup">
+        <div class="content">
+          <div class="head">
+            <p>Add a New Note</p>
+            <img src="x.svg" alt="" />
+          </div>
+          <form action="#">
+            <div class="row title">
+              <label for="title">Title</label>
+              <input type="text" class="input-title" />
+            </div>
+            <div class="row description">
+              <label for="description">Description</label>
+              <textarea name="" id="" class="input-desc"></textarea>
+            </div>
+            <button>Add Note</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="container">
+      <note-list></note-list>
+    </div>
+    <div class="container" id="container">
+      <h1>Archived</h1>
+      <note-list-archived></note-list-archived>
+    </div>
+    <img src="plus.svg" alt="" class="add-note" id="add-note" />
+    <div class="loader"></div>
+
+    <!-- <script src="src/script/data/notes.js"></script>
+    <script src="index.js"></script> -->
+
+    <script src="src/app.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #6482ad;
+  --second-color: #7fa1c3;
+  --third-color: #e2dad6;
+  --fourth-color: #f5eded;
+}
+
+/* Main */
+.container {
+  width: 90%;
+  height: fit-content;
+  border-radius: 2rem;
+  border: 5px solid var(--primary-color);
+  box-shadow: 5px 10px 8px 10px var(--third-color);
+  margin: 2rem 5rem;
+  padding: 2rem;
+}
+
+.container h1 {
+  padding-bottom: 1rem;
+}
+
+/* Add-note */
+.add-note {
+  background-color: var(--primary-color);
+  border-radius: 50px;
+  cursor: pointer;
+  position: sticky;
+  float: right;
+  bottom: 30px;
+  right: 20px;
+}
+
+/* popup box */
+.popup-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.popup-box .popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  max-width: 400px;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-box,
+.popup-box .popup {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25 ease;
+}
+
+.popup-box.show,
+.popup-box.show .popup {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup-box .popup .content {
+  width: calc(100% - 15px);
+  background: #fff;
+  border-radius: 5px;
+}
+
+.popup-box .popup .content .head {
+  padding: 15px 25px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.popup-box .popup .content .head p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.popup-box .popup .content .head img {
+  cursor: pointer;
+  font-size: 23px;
+}
+
+.popup-box .popup .content form {
+  margin: 15px 25px 35px;
+}
+
+.popup-box .popup .content form .row {
+  margin-bottom: 20px;
+}
+
+.popup-box .popup .content form .row-archive input {
+  width: 25px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.popup-box .popup .content form .row label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.popup-box .popup .content form :where(input, textarea) {
+  width: 100%;
+  height: 50px;
+  outline: none;
+  font-size: 17px;
+  padding: 0 15px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.popup-box .popup .content form textarea {
+  height: 150px;
+  resize: none;
+  padding: 8px 15px;
+}
+
+.popup-box .popup .content form button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 17px;
+  border-radius: 4px;
+  background: var(--second-color);
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--third-color);
+  transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid white;
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
